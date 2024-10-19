@@ -69,8 +69,6 @@ with open(os.path.join(PATH,"spanishWordlist.txt"),"r+") as spanishWordListFile:
     ]
 )
     
-    
-
     x = (WIDTH - max_width) / 2
     y = (HEIGHT - max_height) 
 
@@ -78,17 +76,7 @@ with open(os.path.join(PATH,"spanishWordlist.txt"),"r+") as spanishWordListFile:
     img = Image.new("P", (WIDTH, HEIGHT))
     draw = ImageDraw.Draw(img)
 
-
-    #hatch_spacing = 12
-
-    #for x in range(0, 2 * WIDTH, hatch_spacing):
-    #    draw.line((x, 0, x - WIDTH, HEIGHT), fill=inky_display.WHITE, width=3)
-
-
-
     print(definition)
-    #draw.text((6, 8), "this is a test", fill ="red", font = font,  
-    #          spacing = 50, align ="right") 
     draw.text((6,8), reflow_quote(str(definition.choices[0].message.content),600,font), fill=inky_display.WHITE, font=font, spacing=padding,  align="left")
     inky_display.set_image(img)
     inky_display.show()
