@@ -16,16 +16,15 @@ client = OpenAI(
 
 inky_display = auto(ask_user=True, verbose=True)
 inky_display.set_border(inky_display.WHITE)
-# inky_display.set_rotation(180)
 
 def getsize(font, text):
     _, _, right, bottom = font.getbbox(text)
     return (right, bottom)
 
 
-# This function will take a quote as a string, a width to fit
+# This function will take a response string, a width to fit
 # it into, and a font (one that's been loaded) and then reflow
-# that quote with newlines to fit into the space required.
+# that response with newlines to fit into the space required.
 def reflow_quote(quote, width, font):
     words = quote.split(" ")
     reflowed = '"'
