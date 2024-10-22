@@ -76,7 +76,6 @@ with open(os.path.join(PATH,"spanishWordlist.txt"),"r+") as spanishWordListFile:
     img = Image.new("P", (WIDTH, HEIGHT))
     draw = ImageDraw.Draw(img)
 
-    print(definition)
     draw.text((6,8), reflow_quote(str(definition.choices[0].message.content),600,font), fill=inky_display.WHITE, font=font, spacing=padding,  align="left")
     inky_display.set_image(img)
     inky_display.show()
